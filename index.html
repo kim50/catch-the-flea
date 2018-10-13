@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {background: url('cat1.jpg'); background-size:100% auto; }
+		.square {width: 70px;
+				margin: 5px;
+				position: absolute;
+			}
+
+		#name2 {width: 100px;
+			height: 100px;
+			background: black;
+			font-size: 20px;
+			color: red;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		
+	</style>
+</head>
+<body>
+	<img src="flea.png" id="square" style="width: 90px;">
+	<div id="name2">벼룩잡기</div>
+	<script type="text/javascript">
+			var text = "반성문: 본인 정우창은 사랑하는 김수인양의 생일임에도 불구하고 바쁘다는 핑계로 생일축하를 게을리하여 사랑스러운 김수인양을 화나게하였고, 이에따라 앞으로더욱 더사랑해줄것을 다짐하고 서로아끼며 사랑할것을 맹새하며, 주말에는 맛있는음식을 대접하겠습니다.";
+			var newText = text.split(" ");
+			for(var i=0; i<newText.length; i++){
+				var a = document.getElementById("square");
+				var b = a.cloneNode(true);
+				b.innerHTML = newText[i];
+				b.className = "square";
+				b.id = "a" + i;
+				b.style.top = 20*i +"px";
+				b.style.right = 90*i + "px";
+				b.style.animationDelay = i*0.5 + "s";
+				b.onclick = function (){
+					
+				var d = document.getElementById(this.id);
+				console.log (d.innerHTML);
+				name2.innerHTML = d.innerHTML;
+				document.body.removeChild(d);
+			}
+				document.body.appendChild(b);
+			}
+
+	</script>
+</body>
+</html>
