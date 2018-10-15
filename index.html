@@ -25,7 +25,7 @@
 	<img src="flea.png" id="square" style="width: 90px;">
 	<div id="name2">벼룩잡기</div>
 	<script type="text/javascript">
-			var text = "반성문: 본인 정우창은 사랑하는 김수인양의 생일임에도 불구하고 바쁘다는 핑계로 생일축하를 게을리하여 사랑스러운 김수인양을 화나게하였고, 이에따라 앞으로더욱 더사랑해줄것을 다짐하고 서로아끼며 사랑할것을 맹새하며, 주말에는 맛있는음식을 대접하겠습니다.";
+			var text = "                ";
 			var newText = text.split(" ");
 			for(var i=0; i<newText.length; i++){
 				var a = document.getElementById("square");
@@ -33,8 +33,8 @@
 				b.innerHTML = newText[i];
 				b.className = "square";
 				b.id = "a" + i;
-				b.style.top = 20*i +"px";
-				b.style.right = 90*i + "px";
+				b.style.left = randomBH(400,1000) +"px";
+				b.style.top = randomBH(600,200) + "px";
 				b.style.animationDelay = i*0.5 + "s";
 				b.onclick = function (){
 					
@@ -45,6 +45,13 @@
 			}
 				document.body.appendChild(b);
 			}
+
+			function randomBH(min, max) {
+			  min = Math.ceil(min);
+			  max = Math.floor(max);
+			  return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
 
 	</script>
 </body>
